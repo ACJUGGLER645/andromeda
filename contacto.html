@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contáctanos | Andromeda Pet Shop</title>
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
+</head>
+
+<body>
+  <!-- 🔹 TOPBAR -->
+  <div class="topbar" id="topbar">
+    <div class="topbar-container">
+      <div class="topbar-left">
+        <span>📞 +57 3118857400</span>
+        <span>✉️ Andromedapetshop@outlook.com</span>
+      </div>
+      <div class="topbar-right">
+        <span>📍 Calle 71p Sur #27j-10, Bogotá</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <span class="paw">🐾</span>
+        <h1>Andromeda</h1>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="sobrenosotros.html">Sobre nosotros</a>
+        <a href="contacto.html" class="active">Contáctanos</a>
+      </nav>
+
+      <div class="cart">
+        <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Carrito" class="cart-icon" />
+      </div>
+
+      <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html">Tienda</a>
+      <a href="sobrenosotros.html">Sobre nosotros</a>
+      <a href="contacto.html" class="active">Contáctanos</a>
+      <hr />
+      <div class="mobile-contact">
+        <p>📞 +57 3118857400</p>
+        <p>✉️ Andromedapetshop@outlook.com</p>
+        <p>📍 Calle 71p Sur #27j-10, Bogotá</p>
+      </div>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <!-- 🔹 SECCIÓN CONTACTO -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <!-- Imagen lateral -->
+      <div class="contact-image">
+        <img src="assets/productos/pqs.png" alt="Mascotas felices en contacto" />
+      </div>
+
+      <!-- Formulario -->
+      <form class="contact-form">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes preguntas o comentarios? ¡Nos encantaría escucharte!</p>
+
+        <div class="form-row">
+          <input type="text" placeholder="Nombre" required />
+          <input type="text" placeholder="Apellido" required />
+        </div>
+
+        <input type="email" placeholder="Correo electrónico" required />
+        <textarea placeholder="Tu mensaje" rows="5" required></textarea>
+
+        <button type="submit" class="btn-submit">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 🔹 MAPA -->
+  <section class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9318413077515!2d-74.12832192502538!3d4.603619542488388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9e8fcbf221e7%3A0xe0cb9b22b3f65a7c!2sCalle%2071p%20Sur%20%2327j-10%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1698455620000!5m2!1ses!2sco"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </section>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>🐾 Andromeda Pet Shop</h2>
+        <p>
+          Tu mascota es parte de la familia, y en nuestra tienda la tratamos como tal.  
+          Ofrecemos lo mejor para su bienestar, salud y felicidad.
+        </p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968852.png" alt="TikTok" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670147.png" alt="YouTube" /></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="tienda.html">Productos</a></li>
+          <li><a href="sobrenosotros.html">Sobre nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Servicio al cliente</h3>
+        <ul>
+          <li><a href="contacto.html">Contáctanos</a></li>
+          <li><a href="#">Envío</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Orden de seguimiento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Datos de contacto</h3>
+        <p>Calle 71p Sur #27j-10, Bogotá</p>
+        <p>+57 3118857400</p>
+        <p>Andromedapetshop@outlook.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="payments">
+        <img src="assets/pagos/visa.png" alt="Visa" />
+        <img src="assets/pagos/amex.png" alt="Amex" />
+        <img src="assets/pagos/mastercard.png" alt="Mastercard" />
+        <img src="assets/pagos/paypal.png" alt="PayPal" />
+      </div>
+
+      <p>© 2025 Andromeda Pet Shop. ALR</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/navbar.js"></script>
+</body>
+</html>

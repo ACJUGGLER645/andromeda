@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda | Andromeda Pet Shop</title>
+
+  <!-- 🔹 CSS GLOBAL -->
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/categories.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+</head>
+
+<body>
+  <!-- 🔹 TOPBAR -->
+  <div class="topbar" id="topbar">
+    <div class="topbar-container">
+      <div class="topbar-left">
+        <span>📞 +57 3118857400</span>
+        <span>✉️ Andromedapetshop@outlook.com</span>
+      </div>
+      <div class="topbar-right">
+        <span>📍 Calle 71p Sur #27j-10, Bogotá</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔹 NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <span class="paw">🐾</span>
+        <h1>Andromeda</h1>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html" class="active">Tienda</a>
+        <a href="sobrenosotros.html">Sobre nosotros</a>
+        <a href="contacto.html">Contáctanos</a>
+      </nav>
+
+      <div class="cart">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+          alt="Carrito"
+          class="cart-icon"
+        />
+      </div>
+
+      <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Menú móvil -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Inicio</a>
+      <a href="tienda.html" class="active">Tienda</a>
+      <a href="#about">Sobre nosotros</a>
+      <a href="#contact">Contáctanos</a>
+      <hr />
+      <div class="mobile-contact">
+        <p>📞 +57 3118857400</p>
+        <p>✉️ Andromedapetshop@outlook.com</p>
+        <p>📍 Calle 71p Sur #27j-10, Bogotá</p>
+      </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <!-- 🔹 SECCIÓN PRINCIPAL DE TIENDA -->
+  <main class="shop" id="shop">
+    <div class="shop-container">
+      <h2>Compra para tu mascota</h2>
+
+      <!-- 🔹 CATEGORÍAS -->
+      <div class="categories-grid">
+        <div class="category-card active" data-category="todos">
+          <div class="category-img">
+            <img src="assets/hero-pets.png" alt="Todos" />
+          </div>
+          <h3>Todos</h3>
+        </div>
+
+        <div class="category-card" data-category="perros">
+          <div class="category-img">
+            <img src="assets/categories/dog.png" alt="Perro" />
+          </div>
+          <h3>Perro</h3>
+        </div>
+
+        <div class="category-card" data-category="gatos">
+          <div class="category-img">
+            <img src="assets/categories/cat.png" alt="Gato" />
+          </div>
+          <h3>Gato</h3>
+        </div>
+
+        <div class="category-card" data-category="hamster">
+          <div class="category-img">
+            <img src="assets/categories/hamster.png" alt="Hamster" />
+          </div>
+          <h3>Hamster</h3>
+        </div>
+
+        <div class="category-card" data-category="aves">
+          <div class="category-img">
+            <img src="assets/categories/bird.png" alt="Ave" />
+          </div>
+          <h3>Ave</h3>
+        </div>
+
+        <div class="category-card" data-category="general">
+          <div class="category-img">
+            <img src="assets/productos/aseo.png" alt="General" />
+          </div>
+          <h3>General</h3>
+        </div>
+      </div>
+
+      <!-- 🔹 GRID DE PRODUCTOS -->
+      <div class="products-container">
+        <h3>Productos destacados</h3>
+        <div class="products-grid" id="productsGrid">
+          <!-- Productos cargados dinámicamente -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 🔹 FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>🐾 Andromeda Pet Shop</h2>
+        <p>
+          Tu mascota es parte de la familia, y en nuestra tienda la tratamos como tal.  
+          Ofrecemos lo mejor para su bienestar, salud y felicidad.
+        </p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Facebook" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111421.png" alt="Instagram" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968852.png" alt="TikTok" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670147.png" alt="YouTube" /></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h3>Empresa</h3>
+        <ul>
+          <li><a href="tienda.html">Productos</a></li>
+          <li><a href="sobrenosotros.html">Sobre nosotros</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Servicio al cliente</h3>
+        <ul>
+          <li><a href="#contact">Contáctanos</a></li>
+          <li><a href="#">Envío</a></li>
+          <li><a href="#">Devoluciones</a></li>
+          <li><a href="#">Orden de seguimiento</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Datos de contacto</h3>
+        <p>Calle 71p Sur #27j-10, Bogotá</p>
+        <p>+57 3118857400</p>
+        <p>Andromedapetshop@outlook.com</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="payments">
+        <img src="assets/pagos/visa.png" alt="Visa" />
+        <img src="assets/pagos/amex.png" alt="Amex" />
+        <img src="assets/pagos/mastercard.png" alt="Mastercard" />
+        <img src="assets/pagos/paypal.png" alt="PayPal" />
+      </div>
+
+      <p>© 2025 Andromeda Pet Shop. ALR</p>
+    </div>
+  </footer>
+
+  <!-- 🔹 SCRIPTS -->
+  <script src="js/navbar.js"></script>
+  <script src="js/shop.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>

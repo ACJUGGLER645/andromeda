@@ -1,0 +1,100 @@
+/* ---------- PRODUCTOS DESTACADOS ---------- */
+.products {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.products-container {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Título */
+.products-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.products-header p {
+  color: #777;
+  margin-bottom: 40px;
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Tarjeta */
+.product-card {
+  background-color: #f9fafc;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen */
+.product-card img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Nombre */
+.product-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Precio */
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff7a00;
+  margin-bottom: 16px;
+}
+
+/* Botón */
+.btn-add {
+  background-color: #ff7a00;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 22px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #e86a00;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .products-header h2 {
+    font-size: 28px;
+  }
+
+  .product-card {
+    padding: 16px;
+  }
+
+  .btn-add {
+    width: 100%;
+  }
+}

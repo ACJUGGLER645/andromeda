@@ -1,0 +1,314 @@
+/* ==========================================================
+   SECCIÓN QUIÉNES SOMOS (inicio)
+   ========================================================== */
+.about {
+  background-color: #f8f9fb;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo vector decorativo del inicio */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/vector.svg") no-repeat center/cover;
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* Contenedor principal */
+.about-container {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Imagen */
+.about-image {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Texto */
+.about-text {
+  flex: 1 1 500px;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Botón */
+.btn-about {
+  background-color: #ff7a00;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-about:hover {
+  background-color: #e86a00;
+}
+
+/* ---------- RESPONSIVE (inicio) ---------- */
+@media (max-width: 900px) {
+  .about {
+    padding: 70px 0;
+  }
+
+  .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-text h2 {
+    font-size: 30px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+
+  .btn-about {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ==========================================================
+   SECCIÓN SOBRE NOSOTROS (página dedicada)
+   ========================================================== */
+.about-page {
+  background-color: #fff;
+  padding: 120px 0;
+  position: relative;
+}
+
+.about-page .about-container {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.about-page .about-image {
+  flex: 1 1 500px;
+  text-align: center;
+}
+
+.about-page .about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.about-page .about-text {
+  flex: 1 1 500px;
+}
+
+.about-page .about-text h2 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.about-page .about-text p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.about-page .btn-about {
+  background-color: #ff7a00;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.about-page .btn-about:hover {
+  background-color: #e86a00;
+}
+
+/* Responsive base para sobre nosotros */
+@media (max-width: 900px) {
+  .about-page .about-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+  }
+}
+
+/* ==========================================================
+   SECCIÓN DETALLE SOBRE NOSOTROS (complemento)
+   ========================================================== */
+
+/* --- Sección general --- */
+.about-extra {
+  background-color: #fff;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Texto de descripción --- */
+.about-extra p.description {
+  max-width: 900px;
+  margin: 0 auto 40px;
+  color: #555;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+/* --- Bloque de estadísticas --- */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto 60px;
+}
+
+.about-stats div {
+  background: #f8f9fb;
+  border-radius: 12px;
+  padding: 30px 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.about-stats div:hover {
+  transform: translateY(-5px);
+}
+
+.about-stats h3 {
+  color: #ff7a00;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.about-stats p {
+  color: #333;
+  font-weight: 500;
+}
+
+/* --- Sección fundadora --- */
+.founder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  background: #fff;
+  padding: 80px 8%;
+  border-top: 1px solid #eee;
+}
+
+.founder-img img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.founder-text {
+  flex: 1 1 400px;
+  max-width: 550px;
+  text-align: left;
+}
+
+.founder-text h3 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.founder-text .role {
+  color: #ff7a00;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.founder-text p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.founder-text .signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* ==========================================================
+   RESPONSIVE (Sobre nosotros)
+   ========================================================== */
+@media (max-width: 900px) {
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .founder {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .founder-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats div {
+    padding: 20px;
+  }
+}
+/* ==========================================================
+   FIN DE SOBRE NOSOTROS CSS
+   ========================================================== */
