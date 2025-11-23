@@ -443,26 +443,36 @@ Deberías ver la lista de productos en JSON.
 
 ### Opción Recomendada: Netlify
 
-#### Paso 3.1: Actualizar URL del Backend en el Código
-
-**ANTES de desplegar el frontend**, debes actualizar la URL del backend:
-
-1. Abre `js/contact.js`
-2. Busca la línea que dice:
-   ```javascript
-   const API_URL = 'http://localhost:8000';
-   ```
-3. Cámbiala por tu URL de Railway:
-   ```javascript
-   const API_URL = 'https://TU-URL-RAILWAY.railway.app';
-   ```
-
-4. Guarda el archivo y haz commit:
-   ```bash
-   git add js/contact.js
-   git commit -m "Update backend URL for production"
-   git push origin main
-   ```
+#### Paso 3.1: Actualizar URL del Backend (¡Solo un archivo!)
+ 
+ Gracias a la configuración dinámica que hemos implementado, solo necesitas actualizar un archivo.
+ 
+ 1. Abre `js/components.js`
+ 2. Ve al final del archivo y busca la función `window.getApiUrl`.
+ 3. Reemplaza la URL de producción con la que obtuviste en Railway:
+ 
+    ```javascript
+    // js/components.js
+    window.getApiUrl = function() {
+      const hostname = window.location.hostname;
+    
+      if (hostname === "localhost" || hostname === "127.0.0.1") {
+        return "http://localhost:8000";
+      } else {
+        // 👇 PEGA TU URL DE RAILWAY AQUÍ
+        return "https://TU-URL-RAILWAY.railway.app"; 
+      }
+    };
+    ```
+ 
+ 4. Guarda y haz commit:
+    ```bash
+    git add js/components.js
+    git commit -m "Update production API URL"
+    git push origin main
+    ```
+ 
+ > **✨ Magia:** Esto actualizará automáticamente la conexión en `index.html`, `tienda.html` y `contacto.html`. ¡No necesitas editar nada más!
 
 #### Paso 3.2: Actualizar URLs en Meta Tags SEO
 

@@ -16,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
             submitBtn.disabled = true;
 
             try {
-                const response = await fetch("http://localhost:8000/api/contact", {
+                const apiUrl = window.getApiUrl ? window.getApiUrl() : 'http://localhost:8000';
+                const response = await fetch(`${apiUrl}/api/contact`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

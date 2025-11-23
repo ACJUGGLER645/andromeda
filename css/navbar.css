@@ -1,3 +1,37 @@
+/* ---------- VARIABLES & THEME ---------- */
+:root {
+  /* Light Mode (Default) */
+  --bg-body: #f8f9fb;
+  --bg-card: #ffffff;
+  --bg-navbar: #ffffff;
+  --text-main: #111111;
+  --text-secondary: #555555;
+  --text-light: #777777;
+  --primary: #ff7a00;
+  --primary-hover: #e66e00;
+  --border-color: #eeeeee;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.1);
+  --overlay-bg: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode {
+  /* Dark Mode Overrides */
+  --bg-body: #121212;
+  --bg-card: #1e1e1e;
+  --bg-navbar: #1e1e1e;
+  --text-main: #ffffff;
+  --text-secondary: #bbbbbb;
+  --text-light: #999999;
+  --primary: #ff9100;
+  /* Un poco más brillante para modo oscuro */
+  --primary-hover: #ffac4a;
+  --border-color: #333333;
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.5);
+  --overlay-bg: rgba(255, 255, 255, 0.1);
+}
+
 /* ---------- BASE ---------- */
 * {
   margin: 0;
@@ -7,8 +41,10 @@
 }
 
 body {
-  background-color: #f8f9fb;
+  background-color: var(--bg-body);
+  color: var(--text-main);
   min-height: 200vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .no-scroll {
@@ -17,10 +53,10 @@ body {
 
 /* ---------- TOPBAR ---------- */
 .topbar {
-  background-color: #fff;
+  background-color: var(--bg-navbar);
   font-size: 14px;
-  color: #111;
-  border-bottom: 1px solid #eee;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
   transition: all 0.4s ease;
 }
 
@@ -54,11 +90,11 @@ body {
 }
 
 .navbar-container {
-  background-color: #fff;
+  background-color: var(--bg-navbar);
   width: 92%;
   max-width: 1200px;
   border-radius: 30px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
   padding: 14px 20px;
   display: flex;
   align-items: center;
@@ -76,7 +112,7 @@ body {
 .logo h1 {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-main);
 }
 
 /* ---------- LINKS ---------- */
@@ -87,13 +123,13 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-main);
   font-weight: 500;
   position: relative;
 }
 
 .nav-links a.active {
-  color: #ff7a00;
+  color: var(--primary);
 }
 
 .nav-links a.active::after {
@@ -103,18 +139,50 @@ body {
   bottom: -4px;
   width: 100%;
   height: 2px;
-  background-color: #ff7a00;
+  background-color: var(--primary);
   border-radius: 2px;
 }
 
 .nav-links a:hover {
-  color: #ff7a00;
+  color: var(--primary);
+}
+
+/* ---------- ACTIONS (Cart + Theme) ---------- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ---------- THEME TOGGLE ---------- */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--primary);
+  transform: rotate(15deg);
 }
 
 /* ---------- CARRITO ---------- */
 .cart-icon {
   width: 24px;
   cursor: pointer;
+  filter: var(--icon-filter, none);
+  /* Para invertir color si es necesario, aunque SVG es mejor */
+}
+
+/* Ajuste para iconos en modo oscuro si son negros puros */
+body.dark-mode .cart-icon {
+  filter: invert(1);
 }
 
 /* ---------- CONTACTO INLINE ---------- */
@@ -122,7 +190,7 @@ body {
   display: none;
   gap: 16px;
   font-size: 13px;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .contact-inline.visible {
@@ -133,7 +201,7 @@ body {
 .navbar.compact .navbar-container {
   padding: 8px 20px;
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 /* ---------- MENÚ HAMBURGUESA ---------- */
@@ -150,7 +218,7 @@ body {
   display: block;
   height: 3px;
   width: 100%;
-  background-color: #333;
+  background-color: var(--text-main);
   border-radius: 2px;
   transition: 0.3s ease;
 }
@@ -175,7 +243,7 @@ body {
   width: 80%;
   max-width: 320px;
   height: 100vh;
-  background-color: #fff;
+  background-color: var(--bg-card);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
   padding: 60px 25px;
   display: flex;
@@ -191,13 +259,13 @@ body {
 
 .mobile-menu a {
   text-decoration: none;
-  color: #000;
+  color: var(--text-main);
   font-weight: 500;
   font-size: 16px;
 }
 
 .mobile-menu a.active {
-  color: #ff7a00;
+  color: var(--primary);
 }
 
 /* ---------- OVERLAY OSCURO ---------- */
@@ -280,10 +348,10 @@ body {
 
 /* ---------- TOPBAR ---------- */
 .topbar {
-  background-color: #fff;
+  background-color: var(--bg-navbar);
   font-size: 14px;
-  color: #111;
-  border-bottom: 1px solid #eee;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
   transition: all 0.4s ease;
 }
 
@@ -324,7 +392,7 @@ body {
   position: absolute;
   top: -5px;
   right: -8px;
-  background-color: #ff7a00;
+  background-color: var(--primary);
   color: #fff;
   font-size: 11px;
   font-weight: 700;
@@ -334,7 +402,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  border: 2px solid var(--bg-card);
 }
 
 /* ---------- CART MODAL ---------- */
@@ -363,12 +431,13 @@ body {
   width: 100%;
   max-width: 400px;
   height: 100vh;
-  background: #fff;
+  background: var(--bg-card);
   z-index: 999;
   box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
   transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
+  color: var(--text-main);
 }
 
 .cart-modal.open {
@@ -396,7 +465,7 @@ body {
 
 .cart-header {
   padding: 20px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -404,7 +473,7 @@ body {
 
 .cart-header h2 {
   font-size: 20px;
-  color: #333;
+  color: var(--text-main);
 }
 
 .close-cart {
@@ -412,7 +481,7 @@ body {
   border: none;
   font-size: 28px;
   cursor: pointer;
-  color: #777;
+  color: var(--text-light);
   line-height: 1;
 }
 
@@ -424,7 +493,7 @@ body {
 
 .empty-cart-msg {
   text-align: center;
-  color: #777;
+  color: var(--text-light);
   margin-top: 40px;
 }
 
@@ -433,7 +502,7 @@ body {
   gap: 15px;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cart-item img {
@@ -442,6 +511,7 @@ body {
   object-fit: contain;
   border-radius: 8px;
   background: #f9f9f9;
+  /* Mantener fondo claro para productos */
 }
 
 .cart-item-details {
@@ -451,12 +521,12 @@ body {
 .cart-item-details h4 {
   font-size: 14px;
   margin-bottom: 5px;
-  color: #333;
+  color: var(--text-main);
 }
 
 .cart-item-details p {
   font-size: 14px;
-  color: #ff7a00;
+  color: var(--primary);
   font-weight: 600;
   margin-bottom: 8px;
 }
@@ -471,20 +541,20 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #ddd;
-  background: #fff;
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 14px;
-  color: #555;
+  color: var(--text-secondary);
   transition: all 0.2s;
 }
 
 .cart-item-controls button:hover {
-  background: #f0f0f0;
-  border-color: #ccc;
+  background: var(--border-color);
+  border-color: var(--text-light);
 }
 
 .cart-item-controls span {
@@ -492,12 +562,13 @@ body {
   font-weight: 600;
   min-width: 20px;
   text-align: center;
+  color: var(--text-main);
 }
 
 .remove-item {
   background: none;
   border: none;
-  color: #aaa;
+  color: var(--text-light);
   font-size: 20px;
   cursor: pointer;
   align-self: flex-start;
@@ -510,8 +581,8 @@ body {
 
 .cart-footer {
   padding: 20px;
-  border-top: 1px solid #eee;
-  background: #fcfcfc;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-card);
 }
 
 .cart-total {
@@ -520,13 +591,13 @@ body {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #222;
+  color: var(--text-main);
 }
 
 .btn-checkout {
   width: 100%;
   padding: 14px;
-  background: #ff7a00;
+  background: var(--primary);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -537,5 +608,5 @@ body {
 }
 
 .btn-checkout:hover {
-  background: #e66e00;
+  background: var(--primary-hover);
 }

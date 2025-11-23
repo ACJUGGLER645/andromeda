@@ -1,129 +1,203 @@
 /* ---------- HERO PRINCIPAL ---------- */
 .hero {
   width: 100%;
-  background: linear-gradient(90deg, #ff7a00 0%, #ffac4a 100%);
-  padding: 100px 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+  padding: 60px 0 80px;
+  /* Ajustado para mejor balance */
   color: #fff;
-  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elemento decorativo de fondo */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-container {
   max-width: 1200px;
-  width: 92%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
   flex-wrap: wrap;
+  /* Permite que caiga en móviles */
 }
 
 /* Texto */
 .hero-text {
   flex: 1 1 500px;
+  /* Base de 500px, pero puede crecer/encoger */
+  max-width: 600px;
 }
 
 .hero-text h2 {
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 3.5rem;
+  /* Usar rem para mejor escalabilidad */
+  font-weight: 800;
+  line-height: 1.1;
   margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .hero-text p {
-  font-size: 18px;
+  font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  opacity: 0.95;
+  max-width: 90%;
 }
 
 /* Botón */
 .btn-primary {
+  display: inline-block;
   background-color: #fff;
-  color: #ff7a00;
+  color: var(--primary);
   text-decoration: none;
-  padding: 14px 32px;
-  border-radius: 30px;
-  font-weight: 600;
+  padding: 16px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #ffe1c1;
-  color: #d45f00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  color: var(--primary-hover);
 }
 
 /* Imagen */
 .hero-image {
-  flex: 1 1 450px;
-  text-align: center;
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 420px;
-  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25));
+  max-width: 480px;
+  height: auto;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.2));
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animación flotante suave */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* ---------- RESPONSIVE ---------- */
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 80px 0;
-  }
-
-  .hero-text h2 {
-    font-size: 38px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 900px) {
-  .hero {
-    padding: 60px 0;
-    text-align: center;
-  }
-
+/* Tablet y Pantallas Medianas (menos de 992px) */
+@media (max-width: 992px) {
   .hero-container {
-    flex-direction: column;
-    gap: 30px;
+    justify-content: center;
+    text-align: center;
+    gap: 40px;
   }
 
-  .hero-text h2 {
-    font-size: 32px;
+  .hero-text {
+    flex: 1 1 100%;
+    /* Toma todo el ancho para forzar salto de línea si es necesario */
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .hero-text p {
-    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .btn-primary {
-    padding: 12px 28px;
+  .hero-image {
+    flex: 1 1 100%;
+    order: -1;
+    /* Opcional: Poner imagen arriba en tablet/móvil si se prefiere */
+  }
+
+  /* Si prefieres la imagen abajo, quita la línea 'order: -1;' */
+  /* En este caso, dejaremos la imagen abajo para seguir el flujo lógico del texto primero */
+  .hero-image {
+    order: 0;
+  }
+
+  .hero-text h2 {
+    font-size: 3rem;
   }
 }
 
-/* Small Mobile */
-@media (max-width: 480px) {
+/* Mobile (menos de 768px) */
+@media (max-width: 768px) {
   .hero {
-    padding: 40px 0;
+    padding: 40px 0 60px;
   }
 
   .hero-text h2 {
-    font-size: 26px;
-    margin-bottom: 16px;
+    font-size: 2.5rem;
   }
 
   .hero-text p {
-    font-size: 15px;
-    margin-bottom: 24px;
+    font-size: 1rem;
   }
 
   .hero-image img {
-    max-width: 300px;
+    max-width: 320px;
+  }
+}
+
+/* Small Mobile (menos de 480px) */
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 2rem;
   }
 
   .btn-primary {
-    padding: 11px 24px;
-    font-size: 15px;
+    width: 100%;
+    /* Botón ancho completo en móviles pequeños */
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .hero-image img {
+    max-width: 280px;
   }
 }

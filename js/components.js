@@ -34,14 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
             <a href="contacto.html" data-page="contacto.html">Contáctanos</a>
           </nav>
 
-          <!-- ICONO DE CARRITO -->
-          <div class="cart" onclick="toggleCart()">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
-              alt="Carrito"
-              class="cart-icon"
-            />
-            <span id="cart-count" class="cart-count">0</span>
+          <!-- ICONO DE CARRITO Y TEMA -->
+          <div class="nav-actions">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar tema">
+              🌙
+            </button>
+            
+            <div class="cart" onclick="toggleCart()">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/263/263142.png"
+                alt="Carrito"
+                class="cart-icon"
+              />
+              <span id="cart-count" class="cart-count">0</span>
+            </div>
           </div>
 
           <!-- BOTÓN MENÚ MÓVIL -->
@@ -162,6 +168,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Navbar Logic
   initNavbar();
 
+  // Initialize Theme Logic
+  initTheme();
+
   // Initialize Cart Logic
   updateCartUI();
 });
@@ -215,6 +224,34 @@ function initNavbar() {
       if (contactInline) {
         contactInline.classList.toggle("visible", isScrolled);
       }
+    });
+  }
+}
+
+// ==========================
+// THEME LOGIC
+// ==========================
+function initTheme() {
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Aplicar tema guardado
+  if (savedTheme === "dark") {
+    body.classList.add("dark-mode");
+    if (themeToggle) themeToggle.textContent = "☀️";
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      const isDark = body.classList.contains("dark-mode");
+
+      // Cambiar icono
+      themeToggle.textContent = isDark ? "☀️" : "🌙";
+
+      // Guardar preferencia
+      localStorage.setItem("theme", isDark ? "dark" : "light");
     });
   }
 }
@@ -325,3 +362,18 @@ window.toggleCart = toggleCart;
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.updateQuantity = updateQuantity;
+
+// 🔹 API URL CONFIGURATION
+// 🔹 API URL CONFIGURATION
+// Esta función determina automáticamente si usar el backend local o el de producción
+window.getApiUrl = function () {
+  const hostname = window.location.hostname;
+
+  // Si hostname es localhost, 127.0.0.1 o vacío (file://), usar backend local
+  if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "") {
+    return "http://localhost:8000";
+  } else {
+    // ⚠️ IMPORTANTE: Reemplaza esta URL con la que te dé Railway al desplegar
+    return "https://andromeda-petshop-production.up.railway.app";
+  }
+};

@@ -5,9 +5,11 @@ async function loadFeaturedProducts() {
 
     // Intentar cargar desde la API
     try {
-      const response = await fetch('http://localhost:8000/api/products');
+      const apiUrl = window.getApiUrl ? window.getApiUrl() : 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/products`);
       if (response.ok) {
         products = await response.json();
+        window.productsData = products; // 🔹 Guardar globalmente para que addToCart funcione
         console.log("Productos cargados desde la API (Python)");
       } else {
         throw new Error("API response not ok");

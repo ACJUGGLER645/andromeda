@@ -6,7 +6,8 @@ async function loadAllProducts() {
   try {
     // Intentar cargar desde la API
     try {
-      const response = await fetch('http://localhost:8000/api/products');
+      const apiUrl = window.getApiUrl ? window.getApiUrl() : 'http://localhost:8000';
+      const response = await fetch(`${apiUrl}/api/products`);
       if (response.ok) {
         allProducts = await response.json();
         console.log("Productos cargados desde la API (Python)");

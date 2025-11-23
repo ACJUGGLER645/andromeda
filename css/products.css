@@ -1,7 +1,8 @@
 /* ---------- PRODUCTOS DESTACADOS ---------- */
 .products {
   padding: 80px 0;
-  background-color: #fff;
+  background-color: var(--bg-body);
+  transition: background-color 0.3s ease;
 }
 
 .products-container {
@@ -15,12 +16,12 @@
 .products-header h2 {
   font-size: 36px;
   font-weight: 700;
-  color: #222;
+  color: var(--text-main);
   margin-bottom: 8px;
 }
 
 .products-header p {
-  color: #777;
+  color: var(--text-light);
   margin-bottom: 40px;
 }
 
@@ -33,44 +34,71 @@
 
 /* Tarjeta */
 .product-card {
-  background-color: #f9fafc;
+  background-color: var(--bg-card);
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-sm);
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  /* Flexbox para alineación vertical perfecta */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 /* Imagen */
 .product-card img {
   width: 100%;
-  max-width: 220px;
-  height: auto;
+  height: 200px;
+  /* Altura fija para mantener simetría */
+  object-fit: contain;
+  /* Evita que la imagen se recorte o deforme */
   margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  flex-shrink: 0;
+  /* Evita que la imagen se encoja */
+  background-color: #fff;
+  /* Fondo blanco para imágenes transparentes en modo oscuro */
+  border-radius: 12px;
+  padding: 10px;
 }
 
 /* Nombre */
 .product-card h3 {
   font-size: 18px;
-  color: #333;
+  color: var(--text-main);
   margin-bottom: 10px;
+  flex-grow: 1;
+  /* Ocupa el espacio disponible si el título es corto */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* Limita a 2 líneas */
+  line-clamp: 2;
+  /* Estándar para compatibilidad futura */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Precio */
 .price {
   font-size: 16px;
   font-weight: 600;
-  color: #ff7a00;
+  color: var(--primary);
   margin-bottom: 16px;
+  margin-top: auto;
+  /* Empuja el precio (y el botón) hacia abajo */
 }
 
 /* Botón */
 .btn-add {
-  background-color: #ff7a00;
+  background-color: var(--primary);
   color: #fff;
   border: none;
   border-radius: 25px;
@@ -81,7 +109,7 @@
 }
 
 .btn-add:hover {
-  background-color: #e86a00;
+  background-color: var(--primary-hover);
 }
 
 /* ---------- RESPONSIVE ---------- */

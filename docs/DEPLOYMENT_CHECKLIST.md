@@ -93,17 +93,17 @@ backend_python/
 
 ## 🔗 Conexión Frontend ↔ Backend
 
-### Archivo a Modificar: `js/contact.js`
-
-**ANTES del despliegue:**
-```javascript
-const API_URL = 'http://localhost:8000';
-```
-
-**DESPUÉS de obtener URL de Railway:**
-```javascript
-const API_URL = 'https://tu-proyecto.railway.app';
-```
+### Archivo a Modificar: `js/components.js`
+ 
+ **ANTES del despliegue:**
+ ```javascript
+ return "https://andromeda-petshop-production.up.railway.app"; // Placeholder
+ ```
+ 
+ **DESPUÉS de obtener URL de Railway:**
+ ```javascript
+ return "https://TU-PROYECTO.up.railway.app"; // URL Real
+ ```
 
 ### Archivo a Modificar: `backend_python/main.py`
 
@@ -133,7 +133,7 @@ app.add_middleware(
 
 ### Verificación de Código
 
-- [ ] `js/contact.js` tiene `API_URL` correcto
+- [ ] `js/components.js` tiene la URL de producción correcta
 - [ ] `main.py` tiene CORS configurado
 - [ ] Todos los archivos HTML tienen meta tags actualizados
 - [ ] `sitemap.xml` tiene URLs correctas
