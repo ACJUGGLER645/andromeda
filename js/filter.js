@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
             category === "todos"
               ? allProducts
               : allProducts.filter((p) =>
-                  Array.isArray(p.category)
-                    ? p.category.includes(category)
-                    : p.category === category
-                );
+                Array.isArray(p.category)
+                  ? p.category.includes(category)
+                  : p.category === category
+              );
 
           renderProducts(filtered);
           grid.classList.remove("fade-out");
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${product.image}" alt="${product.name}" />
         <h3>${product.name}</h3>
         <p class="price">$${product.price.toLocaleString("es-CO")}</p>
-        <button class="btn-add">Agregar al carrito</button>
+        <button class="btn-add" onclick="addToCart(${product.id})">Agregar al carrito</button>
       `;
       grid.appendChild(card);
     });

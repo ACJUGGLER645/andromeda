@@ -1,0 +1,142 @@
+const productsData = [
+    {
+        "id": 1,
+        "name": "Comida Premium para Perros 4kg",
+        "price": 89900,
+        "image": "assets/productos/Chunky-Cordero-4kg.png",
+        "category": ["perros"]
+    },
+    {
+        "id": 2,
+        "name": "Juguete Hueso de Goma",
+        "price": 30900,
+        "image": "assets/productos/hueso-goma.png",
+        "category": ["perros"]
+    },
+    {
+        "id": 3,
+        "name": "Snacks Naturales para Perro",
+        "price": 19900,
+        "image": "assets/productos/snacks-perro.png",
+        "category": ["perros"]
+    },
+    {
+        "id": 4,
+        "name": "Comida Premium para Gatos 1.5kg",
+        "price": 68900,
+        "image": "assets/productos/comida-gatos.png",
+        "category": ["gatos"]
+    },
+    {
+        "id": 5,
+        "name": "Plato Doble para Gatos",
+        "price": 28900,
+        "image": "assets/productos/plato-doble-gatos.png",
+        "category": ["gatos"]
+    },
+    {
+        "id": 6,
+        "name": "Juguete Pluma Interactiva",
+        "price": 35900,
+        "image": "assets/productos/juguete-pluma.png",
+        "category": ["gatos"]
+    },
+    {
+        "id": 7,
+        "name": "Rascador para Gatos",
+        "price": 59900,
+        "image": "assets/productos/rascador-gatos.png",
+        "category": ["gatos"]
+    },
+    {
+        "id": 8,
+        "name": "Comedero de Acero Inoxidable",
+        "price": 25900,
+        "image": "assets/productos/comedero-inox.png",
+        "category": ["perros", "gatos"]
+    },
+    {
+        "id": 9,
+        "name": "Cama Acolchada para Mascotas",
+        "price": 99900,
+        "image": "assets/productos/cama-mascotas.png",
+        "category": ["perros", "gatos", "general"]
+    },
+    {
+        "id": 10,
+        "name": "Jaula para Hamster Mediana",
+        "price": 75900,
+        "image": "assets/productos/jaula-hamster.png",
+        "category": ["hamster"]
+    },
+    {
+        "id": 11,
+        "name": "Rueda de Ejercicio para Hamster",
+        "price": 18900,
+        "image": "assets/productos/rueda-hamster.png",
+        "category": ["hamster"]
+    },
+    {
+        "id": 12,
+        "name": "Bebedero para Aves",
+        "price": 38900,
+        "image": "assets/productos/bebedero-aves.png",
+        "category": ["aves"]
+    },
+    {
+        "id": 13,
+        "name": "Jaula para Aves Grande",
+        "price": 125900,
+        "image": "assets/productos/jaula-aves.png",
+        "category": ["aves"]
+    },
+    {
+        "id": 14,
+        "name": "Cepillo para Pelaje Suave",
+        "price": 27900,
+        "image": "assets/productos/cepillo-pelaje.png",
+        "category": ["perros", "gatos"]
+    },
+    {
+        "id": 15,
+        "name": "Shampoo Neutro para Mascotas",
+        "price": 34900,
+        "image": "assets/productos/shampoo-mascotas.png",
+        "category": ["perros", "gatos", "general"]
+    },
+    {
+        "id": 16,
+        "name": "Transportadora Mediana",
+        "price": 114900,
+        "image": "assets/productos/transportadora.png",
+        "category": ["perros", "gatos", "general"]
+    },
+    {
+        "id": 17,
+        "name": "Toalla Absorbente para Mascotas",
+        "price": 23900,
+        "image": "assets/productos/toalla-mascotas.png",
+        "category": ["perros", "gatos", "general"]
+    },
+    {
+        "id": 18,
+        "name": "Arena Sanitaria para Gatos 10kg",
+        "price": 47900,
+        "image": "assets/productos/arena-gatos.png",
+        "category": ["gatos"]
+    },
+    {
+        "id": 19,
+        "name": "Vitaminas Multiespecie",
+        "price": 45900,
+        "image": "assets/productos/vitaminas.png",
+        "category": ["perros", "gatos", "aves", "hamster", "general"]
+    },
+    {
+        "id": 20,
+        "name": "Cortaúñas para Mascotas",
+        "price": 22900,
+        "image": "assets/productos/cortaunas.png",
+        "category": ["perros", "gatos", "aves", "general"]
+    }
+];

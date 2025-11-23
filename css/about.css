@@ -79,6 +79,23 @@
 }
 
 /* ---------- RESPONSIVE (inicio) ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about {
+    padding: 85px 0;
+  }
+
+  .about-container {
+    gap: 50px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 900px) {
   .about {
     padding: 70px 0;
@@ -101,6 +118,32 @@
   .btn-about {
     width: 100%;
     text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about {
+    padding: 60px 0;
+  }
+
+  .about-text h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .about-text p {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .about-image img {
+    max-width: 320px;
+  }
+
+  .btn-about {
+    padding: 12px 28px;
+    font-size: 15px;
   }
 }
 
@@ -168,11 +211,55 @@
 }
 
 /* Responsive base para sobre nosotros */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about-page {
+    padding: 100px 0;
+  }
+
+  .about-page .about-container {
+    gap: 50px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 900px) {
+  .about-page {
+    padding: 80px 0;
+  }
+
   .about-page .about-container {
     flex-direction: column-reverse;
     text-align: center;
     gap: 40px;
+  }
+
+  .about-page .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-page .about-text p {
+    font-size: 16px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 60px 0;
+  }
+
+  .about-page .about-text h2 {
+    font-size: 24px;
+  }
+
+  .about-page .about-text p {
+    font-size: 15px;
+  }
+
+  .about-page .about-image img {
+    max-width: 320px;
   }
 }
 
@@ -284,7 +371,25 @@
 /* ==========================================================
    RESPONSIVE (Sobre nosotros)
    ========================================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about-extra {
+    padding: 80px 0;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 900px) {
+  .about-extra {
+    padding: 70px 0;
+  }
+
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
@@ -293,6 +398,7 @@
   .founder {
     flex-direction: column;
     text-align: center;
+    padding: 60px 8%;
   }
 
   .founder-text {
@@ -300,15 +406,47 @@
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
+  .about-extra {
+    padding: 60px 0;
+  }
+
+  .about-extra p.description {
+    font-size: 15px;
+  }
+
   .about-stats {
     grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .about-stats div {
     padding: 20px;
   }
+
+  .about-stats h3 {
+    font-size: 1.6rem;
+  }
+
+  .founder {
+    padding: 50px 5%;
+  }
+
+  .founder-img img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .founder-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .founder-text p {
+    font-size: 14px;
+  }
 }
+
 /* ==========================================================
    FIN DE SOBRE NOSOTROS CSS
    ========================================================== */

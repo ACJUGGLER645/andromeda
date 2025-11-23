@@ -65,6 +65,19 @@
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero-text h2 {
+    font-size: 38px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 900px) {
   .hero {
     padding: 60px 0;
@@ -86,5 +99,31 @@
 
   .btn-primary {
     padding: 12px 28px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-text h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .hero-image img {
+    max-width: 300px;
+  }
+
+  .btn-primary {
+    padding: 11px 24px;
+    font-size: 15px;
   }
 }

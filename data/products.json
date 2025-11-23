@@ -109,7 +109,7 @@
     "name": "Transportadora Mediana",
     "price": 114900,
     "image": "assets/productos/transportadora.png",
-    "category": ["perros", "gatos", "hamster", "general"]
+    "category": ["perros", "gatos", "general"]
   },
   {
     "id": 17,
