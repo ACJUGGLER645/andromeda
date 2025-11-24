@@ -27,15 +27,12 @@
    GRID GENERAL (Reutilizable para index y tienda)
    ========================================================== */
 .categories-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3 columnas por fila */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 40px;
-  justify-items: center;
-  align-items: start;
   margin: 0 auto 80px;
-  max-width: 950px;
-  /* centrado y más proporcionado */
+  max-width: 1000px;
 }
 
 /* ==========================================================
@@ -53,9 +50,7 @@
   border-radius: 20px;
 }
 
-.category-card:hover {
-  transform: translateY(-10px);
-}
+
 
 .category-img {
   width: 140px;
@@ -74,6 +69,8 @@
 .category-card:hover .category-img {
   box-shadow: var(--shadow-md);
   border-color: rgba(255, 122, 0, 0.1);
+  transform: translateY(-10px);
+  /* Only the circle moves */
 }
 
 .category-img img {
@@ -101,11 +98,12 @@
 }
 
 /* Estado activo (categoría seleccionada en tienda) */
+
+
 .category-card.active .category-img {
   border: 4px solid var(--primary);
   box-shadow: 0 0 20px rgba(255, 122, 0, 0.4);
   background-color: var(--bg-card);
-  /* Ajustado para modo oscuro */
 }
 
 .category-card.active h3 {

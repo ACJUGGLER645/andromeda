@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <header class="navbar" id="navbar">
         <div class="navbar-container">
           <!-- LOGO -->
-          <div class="logo">
+          <a href="index.html" class="logo">
             <span class="paw">🐾</span>
             <h1>Andromeda</h1>
-          </div>
+          </a>
 
           <!-- ENLACES -->
           <nav class="nav-links" id="navLinks">
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <li><a href="contacto.html">Contáctanos</a></li>
               <li><a href="#">Envío</a></li>
               <li><a href="#">Devoluciones</a></li>
-              <li><a href="#">Orden de seguimiento</a></li>
+              <li><a href="matrix.html">Orden de seguimiento</a></li>
             </ul>
           </div>
 

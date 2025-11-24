@@ -456,7 +456,8 @@ Deberías ver la lista de productos en JSON.
     window.getApiUrl = function() {
       const hostname = window.location.hostname;
     
-      if (hostname === "localhost" || hostname === "127.0.0.1") {
+      // Si hostname es localhost, 127.0.0.1 o vacío (file://), usar backend local
+      if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "") {
         return "http://localhost:8000";
       } else {
         // 👇 PEGA TU URL DE RAILWAY AQUÍ
