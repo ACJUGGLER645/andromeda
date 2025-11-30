@@ -374,6 +374,6 @@ window.getApiUrl = function () {
     return "http://localhost:8000";
   } else {
     // ⚠️ IMPORTANTE: Reemplaza esta URL con la que te dé Railway al desplegar
-    return "https://andromeda-petshop-production.up.railway.app";
+    return "andromeda-production-51fd.up.railway.app";
   }
 };
