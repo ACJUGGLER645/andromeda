@@ -29,6 +29,8 @@
 - 📱 **Menú Hamburguesa**: Navegación móvil fluida y accesible
 - 💬 **Formulario de Contacto**: Sistema de contacto con validación y feedback visual
 - ✅ **Popup Personalizado**: Confirmación elegante al enviar mensajes
+- 🕵️ **Modo Matrix**: Funcionalidad oculta (Easter Egg) con animaciones avanzadas en Canvas
+- 🚀 **SEO Optimizado**: Estructura semántica, metaetiquetas y buenas prácticas para motores de búsqueda
 
 ### Backend
 - 🚀 **API REST con FastAPI**: Backend moderno y eficiente en Python
@@ -210,9 +212,49 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 
 ---
 
-## 👥 Autores
+## 🔄 Metodología de Desarrollo
 
-**Andromeda Pet Shop Team**
+El desarrollo de **Andromeda Pet Shop** se llevó a cabo siguiendo una metodología **Ágil**, específicamente un enfoque **Iterativo e Incremental**. Esto nos permitió adaptar el producto a medida que evolucionaban los requisitos y asegurar una entrega continua de valor.
+
+### Fases del Ciclo de Vida
+
+1.  **Análisis y Planificación**:
+    *   Definición de requerimientos funcionales (Catálogo, Carrito, Contacto) y no funcionales (Rendimiento, SEO).
+    *   Priorización de características clave para el MVP (Producto Mínimo Viable).
+
+2.  **Diseño (UI/UX y Arquitectura)**:
+    *   Diseño de interfaz centrado en el usuario con enfoque **Mobile First**.
+    *   Definición de arquitectura desacoplada: Frontend estático y Backend API REST.
+    *   Modelado de datos para la gestión de productos y mensajes.
+
+3.  **Desarrollo (Implementación)**:
+    *   **Frontend**: Construcción modular con HTML5 semántico, CSS3 moderno (Variables, Grid, Flexbox) y JavaScript Vanilla.
+    *   **Backend**: Implementación de API robusta con Python y FastAPI.
+    *   **Innovación**: Integración de características avanzadas como el "Modo Oscuro" y la página oculta "Matrix".
+
+4.  **Pruebas y Validación**:
+    *   Pruebas de integración entre Frontend y Backend.
+    *   Validación de experiencia de usuario (UX) y responsividad en múltiples dispositivos.
+    *   Auditoría de accesibilidad y SEO.
+
+5.  **Despliegue (CI/CD)**:
+    *   Configuración de pipelines de despliegue en Netlify (Frontend) y Railway (Backend).
+    *   Monitorización y ajustes de configuración para producción.
+
+---
+
+## 📚 Referencias y Créditos (Normas APA 7)
+
+### Equipo de Desarrollo
+
+*   **Correal, A.** (2025). *Arquitectura de Software y Desarrollo Full Stack*. Andromeda Pet Shop.
+*   **Guzman, R. A.** (2025). *Desarrollo Backend y Base de Datos*. Andromeda Pet Shop.
+
+### Tecnologías y Recursos Principales
+
+*   **FastAPI**. (2024). *FastAPI framework, high performance, easy to learn, fast to code, ready for production* [Software]. https://fastapi.tiangolo.com/
+*   **Python Software Foundation**. (2024). *Python Language Reference, version 3.x* [Software]. https://www.python.org/
+*   **Google Fonts**. (2024). *Poppins Font Family* [Tipografía]. https://fonts.google.com/specimen/Poppins
 
 ---
 
@@ -224,10 +266,9 @@ Para preguntas o sugerencias, utiliza el formulario de contacto en la aplicació
 
 ## 🙏 Agradecimientos
 
-- Iconos de categorías y productos
-- Google Fonts por la tipografía Poppins
-- Comunidad de FastAPI por la excelente documentación
+*   A la comunidad de código abierto por las herramientas increíbles.
+*   A nuestros profesores y mentores por la guía durante el desarrollo.
 
 ---
 
-**¡Gracias por usar Andromeda Pet Shop! 🐶🐱🐹🐦**
+**¡Gracias por visitar Andromeda Pet Shop! 🐶🐱🐹🐦**

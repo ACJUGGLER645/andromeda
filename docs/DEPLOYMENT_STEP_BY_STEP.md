@@ -64,6 +64,7 @@ backend_python/
 ├── tienda.html          ✅ Página de tienda
 ├── contacto.html        ✅ Página de contacto
 ├── sobrenosotros.html   ✅ Página sobre nosotros
+├── matrix.html          ✅ Página oculta (Matrix)
 ├── netlify.toml         ✅ Configuración de Netlify
 ├── robots.txt           ✅ SEO
 ├── sitemap.xml          ✅ SEO
@@ -167,6 +168,7 @@ ls -la
 - ✅ `tienda.html` - Página de tienda
 - ✅ `contacto.html` - Página de contacto
 - ✅ `sobrenosotros.html` - Página sobre nosotros
+- ✅ `matrix.html` - Página oculta (Matrix)
 - ✅ `netlify.toml` - Configuración de Netlify
 - ✅ `robots.txt` - SEO
 - ✅ `sitemap.xml` - SEO
@@ -559,15 +561,32 @@ Vercel necesita redirigir todas las rutas a `index.html` para que el router del 
 > **⚠️ Importante:** Este archivo ya fue creado previamente; verifica que su contenido coincida.
 
 #### Paso 3.3: Actualizar URL del Backend en el Frontend
-
-1. Abre `js/contact.js`.
-2. Reemplaza la constante `API_URL` con la URL del backend en Railway (obtenida en el paso 2.5).
-3. Guarda y haz commit:
-
-```bash
-git add js/contact.js
-git commit -m "Update API_URL for Vercel deployment"
-```
+ 
+ 1. Abre `js/components.js`.
+ 2. Ve al final del archivo y busca la función `window.getApiUrl`.
+ 3. Reemplaza la URL de producción con la URL del backend en Railway (obtenida en el paso 2.5).
+ 
+ ```javascript
+ // js/components.js
+ window.getApiUrl = function() {
+   const hostname = window.location.hostname;
+ 
+   // Si hostname es localhost, 127.0.0.1 o vacío (file://), usar backend local
+   if (hostname === "localhost" || hostname === "127.0.0.1" || hostname === "") {
+     return "http://localhost:8000";
+   } else {
+     // 👇 PEGA TU URL DE RAILWAY AQUÍ
+     return "https://TU-URL-RAILWAY.railway.app"; 
+   }
+ };
+ ```
+ 
+ 4. Guarda y haz commit:
+ 
+ ```bash
+ git add js/components.js
+ git commit -m "Update API_URL for Vercel deployment"
+ ```
 
 #### Paso 3.4: Deploy en Vercel
 
@@ -757,12 +776,25 @@ git push origin main
    - Pega tu URL
    - Verifica que detecte el structured data
 
-### Paso 5.5: Probar en Dispositivos Móviles
-
-1. Abre tu sitio en un móvil
-2. Verifica que el diseño responsive funcione
-3. Prueba el menú hamburguesa
-4. Prueba el formulario de contacto
+### Paso 5.5: Probar Nuevas Funcionalidades
+ 
+ 1. **Modo Matrix:**
+    - Ve al footer de la página.
+    - Haz click en el enlace "Orden de seguimiento".
+    - Verifica que se abra la página `matrix.html` con la animación de lluvia de código.
+    - Haz click en el botón "Access Mainframe" para volver al inicio.
+ 
+ 2. **SEO Optimizado:**
+    - Haz click derecho en cualquier página -> "Ver código fuente".
+    - Verifica que existan las etiquetas `<meta name="description">` y `<meta name="keywords">`.
+    - Verifica las etiquetas Open Graph (`og:title`, `og:description`, `og:image`).
+ 
+ ### Paso 5.6: Probar en Dispositivos Móviles
+ 
+ 1. Abre tu sitio en un móvil
+ 2. Verifica que el diseño responsive funcione
+ 3. Prueba el menú hamburguesa
+ 4. Prueba el formulario de contacto
 
 > **🎉 ¡Excelente!** Si todo funciona correctamente, tu sitio está listo para producción.
 
