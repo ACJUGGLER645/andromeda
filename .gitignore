@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+backend_python/data/
 backend_python/andromeda.db
 backend_python/messages.json
 *.db

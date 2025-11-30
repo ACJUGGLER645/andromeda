@@ -1,9 +1,15 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
+# Ensure data directory exists
+DATA_DIR = "./data"
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
+
 # SQLite database URL
-SQLALCHEMY_DATABASE_URL = "sqlite:///./andromeda.db"
+SQLALCHEMY_DATABASE_URL = f"sqlite:///{DATA_DIR}/andromeda.db"
 
 # Create engine
 engine = create_engine(

@@ -36,7 +36,7 @@ Andromeda Pet Shop se despliega en **dos plataformas separadas**:
 ```
 backend_python/
 ├── main.py              ✅ Aplicación FastAPI
-├── database.py          ✅ Configuración de BD
+├── database.py          ✅ Configuración de BD (apunta a ./data/andromeda.db)
 ├── models.py            ✅ Modelos SQLAlchemy
 ├── init_db.py           ✅ Inicialización de BD
 ├── requirements.txt     ✅ Dependencias Python
@@ -44,13 +44,14 @@ backend_python/
 ```
 
 **Archivos que NO se suben:**
-- ❌ `andromeda.db` (se crea automáticamente en Railway)
+- ❌ `backend_python/data/` (se crea automáticamente)
+- ❌ `backend_python/andromeda.db` (antiguo)
 - ❌ `messages.json` (datos migrados a BD)
 - ❌ `__pycache__/` (cache de Python)
 
 **Configuración especial:**
 - Root Directory: `backend_python`
-- Volumen persistente: `/app/backend_python` (para la BD)
+- Volumen persistente: `/app/backend_python/data` (para la BD)
 
 ---
 
@@ -98,13 +99,13 @@ backend_python/
 
 ```
 Usuario → Netlify (Frontend) → Railway (Backend) → SQLite DB
-         HTML/CSS/JS          FastAPI API         andromeda.db
+         HTML/CSS/JS          FastAPI API         /data/andromeda.db
 ```
 
 **Ejemplo:**
 1. Usuario llena formulario en `contacto.html` (Netlify)
 2. JavaScript envía POST a `https://tu-backend.railway.app/api/contact`
-3. FastAPI guarda en SQLite (Railway)
+3. FastAPI guarda en SQLite (Railway, en volumen persistente)
 4. Respuesta JSON regresa al frontend
 5. Popup de éxito se muestra al usuario
 
@@ -207,6 +208,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+backend_python/data/
 backend_python/andromeda.db
 backend_python/messages.json
 *.db
@@ -222,6 +224,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+backend_python/data/
 backend_python/andromeda.db
 backend_python/messages.json
 *.db
@@ -331,7 +334,7 @@ python3 -m http.server 8080
 **Verificar en base de datos:**
 ```bash
 cd backend_python
-sqlite3 andromeda.db "SELECT * FROM contact_messages ORDER BY created_at DESC LIMIT 1;"
+sqlite3 data/andromeda.db "SELECT * FROM contact_messages ORDER BY created_at DESC LIMIT 1;"
 ```
 
 > **✅ Checkpoint:** Si todo funciona localmente, estás listo para desplegar.
@@ -391,10 +394,10 @@ cat backend_python/requirements.txt
    - En la misma página de Settings
    - Ve a **"Volumes"**
    - Click en **"New Volume"**
-   - Mount Path: `/app/backend_python`
+   - Mount Path: `/app/backend_python/data`
    - Click en **"Add"**
    
-   > **💡 Importante:** Esto asegura que `andromeda.db` persista entre redespliegues.
+   > **💡 Importante:** Esto asegura que la carpeta `data` (donde está `andromeda.db`) persista entre redespliegues.
 
 3. **Verificar Variables de Entorno (opcional):**
    - En la misma página de Settings
