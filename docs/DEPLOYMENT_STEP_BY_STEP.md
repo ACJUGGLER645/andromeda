@@ -232,46 +232,25 @@ backend_python/messages.json
 EOF
 ```
 
-### Paso 1.2: Crear Repositorio en GitHub
+### Paso 1.2: Sincronizar con GitHub
 
-Si aún no tienes un repositorio:
+Como ya tienes tu repositorio creado y configurado, asegúrate de que todos los últimos cambios estén subidos. Esto incluye los archivos de SEO (`robots.txt`, `sitemap.xml`) y la nueva configuración de la base de datos.
+
 ```bash
-# 1. Inicializar Git (si no está inicializado)
-git init
-
-# 2. Verificar que .gitignore esté correcto (ya lo hicimos en Paso 1.1)
-cat .gitignore
-
-# 3. Verificar qué archivos se subirán (NO debe incluir .db, __pycache__, etc.)
+# 1. Verificar estado
 git status
 
-# 4. Agregar archivos
+# 2. Agregar cambios (si hay pendientes)
 git add .
 
-# 5. Verificar nuevamente (asegúrate que andromeda.db NO esté en la lista)
-git status
+# 3. Hacer commit
+git commit -m "Preparando despliegue final: SEO y DB config"
 
-# 6. Hacer commit
-git commit -m "feat: Add SQLite database and complete project structure
-
-- Implement SQLite with SQLAlchemy ORM
-- Add database models (Product, Category, ContactMessage)
-- Create initialization script for database
-- Update API endpoints to use database
-- Add deployment configurations (Procfile, netlify.toml)
-- Update documentation"
-
-# 7. Crear repositorio en GitHub
-# Ve a github.com → New repository → Nombre: andromeda-petshop
-# NO inicialices con README, .gitignore o license (ya los tienes)
-
-# 8. Conectar repositorio local con GitHub
-git remote add origin https://github.com/TU-USUARIO/andromeda-petshop.git
-git branch -M main
-git push -u origin main
+# 4. Subir a GitHub
+git push origin main
 ```
 
-> **⚠️ VERIFICACIÓN CRÍTICA:** Antes de hacer push, asegúrate de que `andromeda.db` NO esté en `git status`. Si aparece, agrégalo a `.gitignore` y ejecuta `git rm --cached backend_python/andromeda.db`.
+> **✅ Confirmación:** Ve a tu repositorio en GitHub (https://github.com/ACJUGGLER645/andromeda) y verifica que veas los archivos `robots.txt` y `sitemap.xml` en la lista.
 
 ---
 
@@ -791,6 +770,9 @@ git push origin main
     - Haz click derecho en cualquier página -> "Ver código fuente".
     - Verifica que existan las etiquetas `<meta name="description">` y `<meta name="keywords">`.
     - Verifica las etiquetas Open Graph (`og:title`, `og:description`, `og:image`).
+    - **Prueba de archivos:**
+        - Ve a `https://TU-SITIO.netlify.app/robots.txt` y verifica que cargue.
+        - Ve a `https://TU-SITIO.netlify.app/sitemap.xml` y verifica que cargue el XML.
  
  ### Paso 5.6: Probar en Dispositivos Móviles
  
