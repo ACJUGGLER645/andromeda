@@ -25,7 +25,7 @@ app = FastAPI(lifespan=lifespan)
 # Configurar CORS para permitir peticiones desde el frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://vocal-hotteok-ce6607.netlify.app/","http://localhost:8080"],  # En producción, especificar el dominio exacto
+    allow_origins=["https://vocal-hotteok-ce6607.netlify.app", "http://localhost:8080"],  # En producción, especificar el dominio exacto
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
