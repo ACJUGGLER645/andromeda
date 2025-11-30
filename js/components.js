@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="assets/pagos/paypal.png" alt="PayPal" />
           </div>
 
-          <p>© 2025 Andromeda Pet Shop. ALR</p>
+          <p>© 2025 Andromeda Pet Shop.</p>
         </div>
       </footer>
     `;
