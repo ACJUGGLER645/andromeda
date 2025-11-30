@@ -1,10 +1,22 @@
+# Python
 .venv/
 __pycache__/
 *.pyc
-.DS_Store
+
+# Environment
 .env
+
+# Database
 backend_python/data/
 backend_python/andromeda.db
 backend_python/messages.json
 *.db
 *.db-journal
+
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes

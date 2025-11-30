@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Alejandro",
+    "lastname": "Correal",
+    "email": "am5612474@gmail.com",
+    "message": "hola\n",
+    "timestamp": "2025-11-22T18:23:23.966703"
+  },
+  {
+    "name": "Jhon",
+    "lastname": "Correal",
+    "email": "am5612474@gmail.com",
+    "message": "Gracias, me hgustaria saber si venden al por mayor\n",
+    "timestamp": "2025-11-22T18:25:48.299624"
+  },
+  {
+    "name": "Ake",
+    "lastname": "asd",
+    "email": "asf@gmai.com",
+    "message": "adsfa",
+    "timestamp": "2025-11-22T18:26:06.188786"
+  },
+  {
+    "name": "Francisco",
+    "lastname": "Pacho",
+    "email": "am5612474@gmail.com",
+    "message": "aafaf",
+    "timestamp": "2025-11-22T19:00:38.898288"
+  }
+]
